@@ -6,7 +6,7 @@ def read_file(filename):
 	return open(os.path.join(os.path.dirname(__file__), filename)).read()
 
 setup(
-	name = 'bleualign',
+	name = 'pypi-bleualign',
 	version = '0.1.1',
 	description = 'An MT-based sentence alignment tool',
 	long_description = read_file('README.md'),

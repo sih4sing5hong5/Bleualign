@@ -1,0 +1,25 @@
+sudo: false
+language: python
+python:
+- '2.7'
+- '3.3'
+- '3.4'
+- '3.5'
+branches:
+  only:
+  - pypi
+install:
+- pip install python-coveralls
+script:
+- coverage -m unittest discover
+after_success:
+- coverage report
+- coveralls
+deploy:
+  provider: pypi
+  user: sih4sing5hong5
+  password:
+    secure: r8owMw2PUo+V6sJbEwf6lRHThA3FfrVWiVAD7j78/3+ZtImOX5SEgaxLUtyOT7Vg2AY50Wco7awjHKEHjbOixUhoM1LwIkiEqJIXJbdyms6aLiLbEpJ12cKJVWz37exjc2begI2aSatIRfkc+lmF+WdzkMvBb9e53jhRF5/KQ01goiSAlBXdRDRDOldxXvww+IOSdzEw3bBUEJJWAmXSOOL/lvSjj5RajfA4vUsBZ5Zqqz/1MYoSPwn2SbyndFWhjSnrK8D2usA3ZxXoZgtClBfcp0+6b9s/lkvdXPBhGKTvcs6oWalUByFBLpNweIx+dCULTNs19jj1EBC6T33aWV6uRf8yvBkCRkpE/dX4QIYJ9fDGFd+RsFl4QogsOczxfE3kiOczEq7b17bZS6fyuMj6Ez8eRzXhaoqhyPE00G8K3hIgzp2CYZzQZ3sFDkJnNb1xHpzS8847vMdeSl7O4Ue2V3RLJ+LaUsq/l9mdnRQXqEWlPga5AFmE78W6epUufDbkqyVaarKJAUGfW/7WVPdHx+36tU1mWHxzs2flbhVu2C3x4OXo6xwAyQnqtvdDLqJKUTCi6qEFz2dWioB/HGp8QSzWbPhN108kP4dWTQJ/RJSHAxwpZoRPpMOHoEdOhB6Y7SA5PT7tlKbUFvVz2aDsTo1QTPkAMRAoiMnReac=
+  on:
+    repo: sih4sing5hong5/Bleualign
+    branch: pypi
