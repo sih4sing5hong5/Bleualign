@@ -11,7 +11,7 @@ branches:
 install:
 - pip install python-coveralls
 script:
-- coverage -m unittest discover
+- coverage run -m unittest discover
 after_success:
 - coverage report
 - coveralls
